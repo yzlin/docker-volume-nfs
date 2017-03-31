@@ -5,6 +5,7 @@ NFS v3/4 plugin for Docker
 
 ```sh
 make
+docker plugin enable yzlin/nfs:0.1
 ```
 
 ```sh
