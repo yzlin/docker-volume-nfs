@@ -1,0 +1,9 @@
+FROM golang:1.8.0-alpine
+
+COPY . /go/src/docker-volume-nfs
+WORKDIR /go/src/docker-volume-nfs
+
+RUN set -ex \
+    && CGO_ENABLED=0 go install -ldflags '-s -w'
+
+CMD ["/go/bin/docker-volume-nfs"]

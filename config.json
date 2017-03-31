@@ -1,0 +1,22 @@
+{
+  "description": "NFS v3/4 plugin for Docker",
+  "documentation": "https://github.com/yzlin/docker-volume-nfs",
+  "entrypoint": [
+    "/docker-volume-nfs"
+  ],
+  "interface": {
+    "socket": "nfs.sock",
+    "types": [
+      "docker.volumedriver/1.0"
+    ]
+  },
+  "linux": {
+    "capabilities": [
+      "CAP_SYS_ADMIN"
+    ]
+  },
+  "network": {
+    "type": "host"
+  },
+  "PropagatedMount": "/mnt/fs"
+}
