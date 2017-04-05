@@ -241,10 +241,6 @@ func (n nfsDriver) Unmount(r volume.UnmountRequest) volume.Response {
 
 	mnt.connections--
 
-	if mnt.connections < 1 {
-		delete(n.mounts, name)
-	}
-
 	// Cleanup
 	if empty, _ := isEmpty(mnt.mountpoint); !empty {
 		logger.Warnf("Directory %s is not empty after unmount. Skipping RemoveAll call.", mnt.mountpoint)
